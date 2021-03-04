@@ -13,13 +13,21 @@ export default function StarshipContextProvider({ children }) {
       currentPage: 1,
    })
 
-   const [selectedStarship, setSelectedStarship] = useState(null)
+   const [detail, setDetail] = useState({
+      isLoading: false,
+      data: null,
+      url: ''
+   })
 
    const fetchDetailStarship = (url) => {
       fetch(url)
          .then((response) => response.json())
          .then((data) => {
-            console.log(data)
+            setDetail(prevState => ({
+               ...prevState,
+               isLoading: false,
+               data: data
+            }))
          })
    }
 
@@ -52,8 +60,8 @@ export default function StarshipContextProvider({ children }) {
       <StarshipContext.Provider
          value={{
             starship,
-            selectedStarship,
-            setSelectedStarship,
+            detail,
+            setDetail,
             setStarship,
             fetchStarship,
             fetchDetailStarship,

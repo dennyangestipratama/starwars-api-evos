@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import InfiniteScroll from 'react-infinite-scroller'
 
 import { StarshipContext } from '@Context/StarshipContext'
+import { images } from '@Utilities/Images'
 
 export default function Home() {
    const starshipContext = useContext(StarshipContext)
@@ -20,7 +21,7 @@ export default function Home() {
       if (!starship.isLoading) {
          starshipContext.fetchStarship(find.keyword)
       }
-   }, [starship.currentPage, find.searching, find.showReset])
+   }, [starship.currentPage, find.searching, find.showReset]) // eslint-disable-line react-hooks/exhaustive-deps
 
    const search = (event) => {
       event.preventDefault()
@@ -34,7 +35,7 @@ export default function Home() {
    }
 
    return (
-      <div>
+      <div className='home'>
          <form onSubmit={(event) => search(event)}>
             <input value={find.keyword} onChange={({ target: { value } }) => setFind((prevState) => ({ ...prevState, keyword: value }))} />
             <button type='submit'>search</button>
@@ -52,8 +53,11 @@ export default function Home() {
             {starship.items.map((item) => {
                return (
                   <Link to={`/starship/${item.name.replace(/\s/g, '-').toLowerCase()}`}>
-                     <div onClick={() => starshipContext.setSelectedStarship(item)}>
+                     <div onClick={() => { localStorage.setItem('url', item.url) }}>
                         <h3>{item.name}</h3>
+                        {images.filter(filter => filter.name === item.name.replace(/\s/g, '-').toLowerCase()).map(img => (
+                           <img src={img.url} alt={img.name} />
+                        ))}
                         <p>{item.passengers}</p>
                         <p>{item.cargo_capacity}</p>
                         <p>{item.length}</p>

@@ -1,0 +1,20 @@
+.home {
+   border-top: 5px solid $clr-main;
+
+   &::after {
+      content: '';
+      background: $clr-main;
+      width: 9.5em;
+      height: .65em;
+      position: absolute;
+      top: 0;
+      right: 20.5%;
+      clip-path: polygon(0 0, 100% 0, 95% 100%, 5% 100%);
+   }
+}
+
+img {
+   width: 200px;
+   height: 200px;
+   object-fit: contain;
+}
