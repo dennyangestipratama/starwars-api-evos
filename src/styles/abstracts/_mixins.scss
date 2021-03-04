@@ -1,0 +1,115 @@
+/*  Mixin for Media Queries
+    How to use: 
+    @include respondTo (phone/tablet/desktop/) {
+      // respondTo code for tablet
+       ...
+    }    
+*/
+@mixin respondTo ($breakpoint) {
+
+   @if $breakpoint==small--phone {
+      @media only screen and (max-width: 320px) {
+         @content;
+      }
+   }
+
+   @if $breakpoint==phone {
+      @media only screen and (max-width: 767px) {
+         @content;
+      }
+   }
+
+   @if $breakpoint==tablet {
+      @media only screen and (max-width: 991px) {
+         @content;
+      }
+   }
+
+   @if $breakpoint==desktop {
+      @media only screen and (min-width: 992px) {
+         @content;
+      }
+   }
+
+   @if $breakpoint==large {
+      @media only screen and (min-width: 1440px) {
+         @content;
+      }
+   }
+}
+
+/*  Mixin for Placeholder 
+   How to use: 
+   input,  
+   textarea {  
+   @include placeholder {
+       color: $grey;
+   }
+ }
+ */
+@mixin placeholder {
+   &.placeholder {
+      @content;
+   }
+
+   &:-moz-placeholder {
+      @content;
+   }
+
+   &::-moz-placeholder {
+      @content;
+   }
+
+   &:-ms-input-placeholder {
+      @content;
+   }
+
+   &::-webkit-input-placeholder {
+      @content;
+   }
+}
+
+/*  Mixin for Key Frames
+   How to use: 
+   @include keyframes(animate) {
+   50% {
+       transform: rotate(90deg);
+   }
+   100% {
+       transform: rotate(-90deg);
+   }
+ }
+ */
+@mixin keyframes($name) {
+   @-webkit-keyframes #{$name} {
+      @content;
+   }
+
+   @-moz-keyframes #{$name} {
+      @content;
+   }
+
+   @keyframes #{$name} {
+      @content;
+   }
+}
+
+/*  Mixin for Shortening a text
+   How to use: 
+   @include shortenText
+ */
+@mixin shortenText {
+   overflow: hidden;
+   text-overflow: ellipsis;
+   white-space: nowrap;
+}
+
+/*  Mixin for Change SVG Colors
+   How to use: 
+   @include svgColor(#00000)
+ */
+@mixin svgColor($svg-color) {
+   path {
+      fill: $svg-color;
+   }
+}
