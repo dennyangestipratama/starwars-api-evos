@@ -24,6 +24,19 @@ This repository created with purpose of EVOS recruitement test
 
 [![Deploy to Vercel](https://vercel.com/button)](https://evos.dennyangesti.com)
 
+## Running on local
+You’ll need to have Node >= 10 on your local development machine (but it’s not required on the server). You can use nvm (macOS/Linux) or nvm-windows to switch Node versions between different projects. After all requirements meets then you need to run this command.
+
+```bash
+npm install
+npm start
+
+or
+
+yarn install
+yarn start
+```
+
 ***
 
 Copyright © 2021 by Denny Angesti Pratama
