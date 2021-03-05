@@ -1,4 +1,4 @@
-# 💻 Denny Angesti Pratama
+# Denny Angesti Pratama
 ## Purpose
 This repository created with purpose of EVOS recruitement test
 
@@ -22,7 +22,7 @@ This repository created with purpose of EVOS recruitement test
 > and found out that this API is no longer maintened as they wrote it on their repo,
 > https://github.com/Juriy/swapi/issues/27
 
-[![Deploy to Vercel](https://vercel.com/button)](https://evos.dennyangesti.com)
+[![evos.dennyangesti.com](https://vercel.com/button)](https://evos.dennyangesti.com)
 
 ## Running on local
 You’ll need to have Node >= 10 on your local development machine (but it’s not required on the server). You can use nvm (macOS/Linux) or nvm-windows to switch Node versions between different projects. After all requirements meets then you need to run this command.
