@@ -32,7 +32,7 @@ export default function StarshipContextProvider({ children }) {
    }
 
    const fetchStarship = (search) => {
-      fetch(`${BASE_URL}/starships?search=${search}&page=${starship.currentPage}`)
+      fetch(`starships?search=${search}&page=${starship.currentPage}`)
          .then((response) => response.json())
          .then((data) => {
             const results = data.results

@@ -1,5 +1,5 @@
 const { createProxyMiddleware } = require('http-proxy-middleware')
-const BASE_URL = 'http://swapi.dev/api'
+const BASE_URL = 'http://swapi.dev'
 module.exports = function (app) {
    if (BASE_URL) {
       app.use(
