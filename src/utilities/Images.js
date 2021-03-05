@@ -21,7 +21,7 @@ import naboo_royal_starship from '@Image/naboo-royal-starship.webp'
 import naboo_star_skiff from '@Image/naboo-star-skiff.webp'
 import rebel_transport from '@Image/rebel-transport.webp'
 import republic_assault_ship from '@Image/republic-assault-ship.webp'
-import republic_attack_cruiser from '@Image/republic-attack-cruiser.webp'
+import republic_cruiser from '@Image/republic-attack-cruiser.webp'
 import scimitar from '@Image/scimitar.webp'
 import sentinel_class_landing_craft from '@Image/sentinel-class-landing-craft.webp'
 import slave_1 from '@Image/slave-1.webp'
@@ -128,8 +128,12 @@ export const images = [
       url: republic_assault_ship,
    },
    {
+      name: 'republic-cruiser',
+      url: republic_cruiser,
+   },
+   {
       name: 'republic-attack-cruiser',
-      url: republic_attack_cruiser,
+      url: republic_cruiser,
    },
    {
       name: 'scimitar',

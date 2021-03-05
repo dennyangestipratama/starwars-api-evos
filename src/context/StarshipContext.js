@@ -16,17 +16,17 @@ export default function StarshipContextProvider({ children }) {
    const [detail, setDetail] = useState({
       isLoading: false,
       data: null,
-      url: ''
+      url: '',
    })
 
    const fetchDetailStarship = (url) => {
       fetch(url)
          .then((response) => response.json())
          .then((data) => {
-            setDetail(prevState => ({
+            setDetail((prevState) => ({
                ...prevState,
                isLoading: false,
-               data: data
+               data: data,
             }))
          })
    }

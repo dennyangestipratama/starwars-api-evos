@@ -1,0 +1,89 @@
+body {
+   &::-webkit-scrollbar {
+      width: 12px;
+      /* width of the entire scrollbar */
+   }
+
+   &::-webkit-scrollbar-track {
+      background: #0F0B0D;
+      ;
+      /* color of the tracking area */
+   }
+
+   &::-webkit-scrollbar-thumb {
+      background-color: #7a0000;
+      /* color of the scroll thumb */
+      border-radius: 0;
+      /* roundness of the scroll thumb */
+   }
+}
+
+.layout {
+   background: #0F0B0D;
+   max-height: 100vw;
+   min-height: 100vh;
+   position: relative;
+   z-index: 1;
+
+   @include respondTo(tablet) {
+      overflow-x: hidden;
+   }
+}
+
+.layout-background {
+   position: absolute;
+   z-index: -1;
+
+   img {
+      width: 25rem;
+
+      @include respondTo(tablet) {
+         width: 15rem;
+      }
+   }
+}
+
+.background-right {
+   top: 0;
+   right: 0;
+}
+
+.background-left {
+   bottom: 0;
+   left: 0;
+}
+
+.navbar {
+   border-top: 20px solid #7A0000;
+}
+
+.navbar-title {
+   font-weight: 800;
+   font-size: 30px;
+   line-height: 36px;
+   color: #FFFFFF;
+   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+   text-transform: uppercase;
+   position: relative;
+   padding: .25em 2em;
+   padding-top: .25em;
+   width: fit-content;
+   border-bottom: 4px solid #7A0000;
+   cursor: pointer;
+
+   @include respondTo(tablet) {
+      font-size: 18px;
+   }
+
+   &::before {
+      content: '';
+      background: #7A0000;
+      width: 9.5em;
+      height: .65em;
+      position: absolute;
+      z-index: 1;
+      top: 0;
+      left: 100%;
+      clip-path: polygon(0 0, 100% 0, 95% 100%, 5% 100%);
+   }
+}

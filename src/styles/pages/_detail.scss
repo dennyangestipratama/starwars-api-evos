@@ -1,0 +1,50 @@
+.detail {
+   padding: 5rem 10rem;
+
+   @include respondTo(tablet) {
+      padding: 1.5rem 2.5rem;
+   }
+}
+
+.detail-card {
+   background: rgba(196, 196, 196, 0.11);
+   border-radius: 11px;
+   overflow: hidden;
+   display: flex;
+
+   @include respondTo(tablet) {
+      flex-direction: column;
+   }
+}
+
+.card-image {
+   width: 30rem;
+   object-fit: cover;
+
+   @include respondTo(tablet) {
+      width: 100%;
+   }
+}
+
+.card-info {
+   padding: 1rem 3rem;
+
+   h3 {
+      font-weight: bold;
+      font-size: 24px;
+      line-height: 29px;
+      color: #FFFFFF;
+      text-transform: capitalize;
+      margin-bottom: 20px;
+   }
+
+   p {
+      font-size: 18px;
+      line-height: 22px;
+      color: #FFFFFF;
+
+      &:not(:last-of-type) {
+         margin-bottom: 5px;
+      }
+   }
+}

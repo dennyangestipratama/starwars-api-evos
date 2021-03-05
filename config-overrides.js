@@ -17,6 +17,7 @@ module.exports = function override(config, env) {
       '@Styles': path.resolve(__dirname, './src/styles/'),
       '@Image': path.resolve(__dirname, './assets/image/'),
       '@Icon': path.resolve(__dirname, './assets/icon/'),
+      '@Logo': path.resolve(__dirname, './assets/logo/'),
    }
 
    config.optimization = {
