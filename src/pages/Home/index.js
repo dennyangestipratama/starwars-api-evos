@@ -67,7 +67,7 @@ export default function Home() {
                         <div
                            className='home-card'
                            onClick={() => {
-                              localStorage.setItem('url', item.url.replace("http://swapi.dev/api/", ""))
+                              localStorage.setItem('url', item.url.replace('http://swapi.dev/api/', ''))
                            }}>
                            {images
                               .filter((filter) => filter.name === item.name.replace(/\s/g, '-').toLowerCase())
